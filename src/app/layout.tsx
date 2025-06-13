@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
+import dynamic from "next/dynamic";
+
+const Navigation = dynamic(() => import("@/components/Navigation"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });
 
