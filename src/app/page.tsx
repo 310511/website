@@ -1,10 +1,12 @@
 'use client'
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import HeroSection from "@/components/HeroSection";
-import StatsSection from "@/components/StatsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+
+const HeroSection = dynamic(() => import("@/components/HeroSection"), { ssr: false });
+const StatsSection = dynamic(() => import("@/components/StatsSection"), { ssr: false });
+const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection"), { ssr: false });
 
 export default function Home() {
   return (
